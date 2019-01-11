@@ -1,11 +1,18 @@
 node() {
+    environment {
+        registry = "repository_name"
+        registryCredential = 'dockerhub'
+    }
+
     stage('Checkout') {
         deleteDir() // Workdir cleanup
         def scmVars = checkout scm
     }
 
     stage('Build') {
-        sh "docker build -t image/test ."
+        script {
+          docker.build registry + ":$BUILD_NUMBER"
+        }
     }
 
     stage('Tests') {
