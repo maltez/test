@@ -1,15 +1,11 @@
 node() {
-    def image
-
     stage('Checkout') {
         deleteDir() // Workdir cleanup
         def scmVars = checkout scm
-
-        image = "imageTAG"
     }
 
     stage('Build') {
-        sh "docker build -t ${image} ."
+        sh "docker build -t image/test ."
     }
 
     stage('Tests') {
