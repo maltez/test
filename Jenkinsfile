@@ -1,7 +1,6 @@
 node() {
     environment {
         registry = "repository_name"
-        registryCredential = 'dockerhub'
     }
 
     stage('Checkout') {
@@ -10,9 +9,8 @@ node() {
     }
 
     stage('Build') {
-        script {
-          docker.build registry + ":$BUILD_NUMBER"
-        }
+        sh "echo Building"
+        //docker.build registry + ":$BUILD_NUMBER"
     }
 
     stage('Tests') {
