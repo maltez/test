@@ -10,7 +10,7 @@ node() {
 
     stage('Build') {
         sh "echo Building"
-        //docker.build registry + ":$BUILD_NUMBER"
+        docker.build registry + ":$BUILD_NUMBER"
     }
 
     stage('Tests') {
