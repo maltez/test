@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "build": "echo BUILD SUCCESS",
-    "test": "echo TEST COMPLETE"
+    "test": "echo TEST SUCCESFULLY COMPLETED"
   },
   "repository": {
     "type": "git",
