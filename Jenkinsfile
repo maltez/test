@@ -1,14 +1,6 @@
 pipeline {
     agent none
     stages {
-        stage("Cleanup"){
-            echo "Cleanup!!!"
-        }
-        post {
-            fixed {
-                echo "Cleeeeeeeeeeeeeeaaaaaaan!"
-            }
-        }
         stage("Checkout") {
             steps {
                 echo "Checkout"
@@ -29,5 +21,10 @@ pipeline {
                 echo "Integration test passed"
             }
         }
+    }
+    post {
+            fixed {
+                echo "Cleeeeeeeeeeeeeeaaaaaaan!"
+            }
     }
 }
