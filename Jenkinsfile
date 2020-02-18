@@ -2,8 +2,16 @@ pipeline {
     agent none
     stages {
         stage("Checkout") {
+            input{
+                message "Continue?"
+                ok "Yes"
+                submitter "Nick"
+                parameters {
+                    string(name:"PERSON", defaultValue: "Nick", description: "This is name of approver")
+                }
+            }
             steps {
-                echo "Checkout"
+                echo "Checkout initiate by ${PERSON}"
             }
         }
         stage("Build") {
