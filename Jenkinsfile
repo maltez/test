@@ -1,6 +1,14 @@
 pipeline {
     agent none
     stages {
+        stage("Cleanup"){
+            echo "Cleanup!!!"
+        }
+        post {
+            fixed {
+                echo "Cleeeeeeeeeeeeeeaaaaaaan!"
+            }
+        }
         stage("Checkout") {
             steps {
                 echo "Checkout"
