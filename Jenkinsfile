@@ -19,14 +19,18 @@ pipeline {
                 echo "Build"
             }
         }
-        stage("Unit test"){
-            steps {
-                echo "Unit test passed"
-            }
-        }
-        stage("Integration test"){
-            steps {
-                echo "Integration test passed"
+        stage("test"){
+            parallel {
+                stage("Unit test"){
+                    steps {
+                        echo "Unit test passed"
+                    }
+                }
+                stage("Integration test"){
+                    steps {
+                        echo "Integration test passed"
+                    }
+                }
             }
         }
     }
