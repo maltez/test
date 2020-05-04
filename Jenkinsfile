@@ -7,7 +7,7 @@ node() {
 
     stage('Build') {
         sh "echo Building"
-        sh "Change Jenkinsfile"
+        sh "echo 'Change Jenkinsfile'"
         sh "docker build -t image/test ."
     }
 
