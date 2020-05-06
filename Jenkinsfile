@@ -1,3 +1,5 @@
+@Library('logging') _
+
 node() {
     stage('Checkout') {
         //git "https://github.com/maltez/test.git"
@@ -6,16 +8,16 @@ node() {
     }
 
     stage('Build') {
-        sh "echo Building"
-        sh "echo 'Change Jenkinsfile'"
+        log.info("Building")
+        log.info("Change Jenkinsfile")
         sh "docker build -t image/test ."
     }
 
     stage('Tests') {
-        sh "echo Testing"
+        log.info("Testing")
     }
 
     stage('Push image') {
-        sh "echo Pushing"
+        log.warning("Pushing")
     }
 }
