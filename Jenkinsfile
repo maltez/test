@@ -1,8 +1,8 @@
 node() {
     stage('Checkout') {
-        //git "https://github.com/maltez/test.git"
-         deleteDir() // Workdir cleanup
-        def scmVars = checkout scm
+        //def scmVars = checkout scm
+        deleteDir() // Workdir cleanup
+        git "https://github.com/maltez/test.git"
     }
 
     stage('Build') {
