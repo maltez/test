@@ -1,4 +1,4 @@
-@Library('logging') _
+// @Library('logging') _
 
 node() {
     stage('Checkout') {
